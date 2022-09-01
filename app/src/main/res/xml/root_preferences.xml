@@ -5,5 +5,14 @@
         android:key="game_settings_illustration_video"
         app:lottie_rawRes="@drawable/desktop_illustration" />
 
+    <Preference
+        android:key="pc_mode_config"
+        android:title="@string/pc_mode_config_title"
+        android:summary="@string/pc_mode_config_summery" />
+
+    <Preference
+        android:key="tv_mode_config"
+        android:title="@string/tv_mode_config_title"
+        android:summary="@string/tv_mode_config_summery" />
 
 </PreferenceScreen>

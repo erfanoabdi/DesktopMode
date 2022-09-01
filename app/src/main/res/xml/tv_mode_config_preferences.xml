@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.libremobileos.desktopmode.preferences.GlobalSettingSwitchPreference
+        android:key="force_desktop_mode_on_external_displays"
+        android:title="@string/enable"
+        android:summary="@string/tv_mode_enable_switch" />
+
+    <Preference
+        android:key="tv_mode_touchpad"
+        android:title="@string/tv_mode_touchpad_title"
+        android:summary="@string/tv_mode_touchpad_summery"
+        android:enabled="false" />
+
+</PreferenceScreen>

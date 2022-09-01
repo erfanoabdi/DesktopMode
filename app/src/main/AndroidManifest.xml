@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.libremobileos.desktopmode">
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +27,16 @@
             <meta-data
                 android:name="com.android.settings.summary"
                 android:resource="@string/app_summary" />
+        </activity>
+        <activity
+            android:name=".PCModeConfigActivity"
+            android:exported="true"
+            android:label="@string/pc_mode_config_title">
+        </activity>
+        <activity
+            android:name=".TVModeConfigActivity"
+            android:exported="true"
+            android:label="@string/tv_mode_config_title">
         </activity>
     </application>
 
