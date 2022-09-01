@@ -1,3 +1,9 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="game_settings_illustration_video"
+        app:lottie_rawRes="@drawable/desktop_illustration" />
+
 
 </PreferenceScreen>

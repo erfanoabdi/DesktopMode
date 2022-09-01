@@ -9,9 +9,11 @@ android {
         res.srcDirs = [
             'main/res',
             'CollapsingToolbarBaseActivity/res',
+            'IllustrationPreference/res',
         ]
         java.srcDirs = [
             'CollapsingToolbarBaseActivity/src',
+            'IllustrationPreference/src',
         ]
     }
 }
@@ -21,4 +23,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
 }
