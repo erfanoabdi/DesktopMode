@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.libremobileos.desktopmode.preferences.GlobalSettingSwitchPreference
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="tv_mode_intro"
+        android:title="@string/tv_mode_intro" />
+
+    <com.libremobileos.desktopmode.preferences.GlobalSettingMainSwitchPreference
         android:key="force_desktop_mode_on_external_displays"
         android:title="@string/enable"
         android:summary="@string/tv_mode_enable_switch" />

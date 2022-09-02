@@ -11,11 +11,13 @@ android {
             'CollapsingToolbarBaseActivity/res',
             'IllustrationPreference/res',
             'TopIntroPreference/res',
+            'MainSwitchPreference/res',
         ]
         java.srcDirs = [
             'CollapsingToolbarBaseActivity/src',
             'IllustrationPreference/src',
             'TopIntroPreference/src',
+            'MainSwitchPreference/src',
         ]
     }
 }

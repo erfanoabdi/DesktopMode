@@ -17,6 +17,7 @@
     <string name="tv_mode_config_title">Desktop Mode on TV</string>
     <string name="tv_mode_config_summery">Configurations for android desktop mode on HDMI connected TV or any external display</string>
 
+    <string name="tv_mode_intro">Get a powerful desktop experience from your phone.\nConnect your device wirelessly or with a HDMI cable to a compatible TV or Monitor.</string>
     <string name="tv_mode_enable_switch">Enable Desktop mode on External Display</string>
     <string name="tv_mode_touchpad_title">Touchpad on Screen</string>
     <string name="tv_mode_touchpad_summery">Show touchpad and keyboard on device screen</string>
