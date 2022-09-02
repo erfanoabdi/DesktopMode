@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+    android:gravity="center_vertical"
+    android:clickable="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/width_text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/width_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+            android:textColor="?android:attr/textColorPrimary"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:text="@string/width"/>
+
+        <EditText
+            android:id="@+id/width_text_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            android:textColor="?android:attr/textColorSecondary"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:imeOptions="actionDone"
+            android:text="1280"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/height_text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/height_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+            android:textColor="?android:attr/textColorPrimary"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:text="@string/height"/>
+
+        <EditText
+            android:id="@+id/height_text_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            android:textColor="?android:attr/textColorSecondary"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:imeOptions="actionDone"
+            android:text="720"/>
+    </LinearLayout>
+
+</LinearLayout>

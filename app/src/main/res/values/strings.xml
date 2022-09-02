@@ -1,8 +1,16 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Desktop Mode</string>
     <string name="app_summary">Full desktop mode on external display or PC</string>
 
+    <string name="cancel">Cancel</string>
+    <string name="edit_hint">Value</string>
+    <string name="edit_label">Set value</string>
     <string name="enable">Enable</string>
+    <string name="ok">OK</string>
+
+    <string name="resolution">Resolution</string>
+    <string name="width">Width</string>
+    <string name="height">Height</string>
 
     <string name="pc_mode_config_title">Desktop Mode on PC</string>
     <string name="pc_mode_config_summery">Configurations for android desktop mode on PC</string>
@@ -12,5 +20,19 @@
     <string name="tv_mode_enable_switch">Enable Desktop mode on External Display</string>
     <string name="tv_mode_touchpad_title">Touchpad on Screen</string>
     <string name="tv_mode_touchpad_summery">Show touchpad and keyboard on device screen</string>
+
+    <string name="pc_mode_intro">Get a powerful desktop experience from your phone.\nConnect your device with a cable to a compatible PC.\nPC client: <a href="https://get.libremobileos.com/desktop">get.libremobileos.com/desktop</a> .</string>
+    <string name="pc_mode_auto_res_title">Auto Resolution</string>
+    <string name="pc_mode_auto_res_summaryOn">Resize desktop resolution based on client size</string>
+    <string name="pc_mode_auto_res_summaryOff">Use fixed custom resolution for desktop</string>
+    <string name="pc_mode_low_res_title">Low Resolution</string>
+    <string name="pc_mode_low_res_summaryOn">Use half resolution size of client window</string>
+    <string name="pc_mode_low_res_summaryOff">Use full resolution size of client window</string>
+    <string name="pc_mode_scaling_title">Density Scaling</string>
+    <string name="pc_mode_service_start">Start Now</string>
+    <string name="pc_mode_service_stop">Stop Now</string>
+    <string name="pc_mode_service_restart">Restart Now</string>
+    <string name="pc_mode_service_apply">Apply Changes Now</string>
+    <string name="pc_mode_service_restart_apply">Apply and Restart Now</string>
 
 </resources>

@@ -1,4 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="pc_mode_intro"
+        android:title="@string/pc_mode_intro" />
+
+    <PreferenceCategory android:title="@string/resolution">
+        <SwitchPreference
+            android:key="pc_mode_auto_resolution"
+            android:defaultValue="true"
+            android:title="@string/pc_mode_auto_res_title"
+            android:summaryOn="@string/pc_mode_auto_res_summaryOn"
+            android:summaryOff="@string/pc_mode_auto_res_summaryOff" />
+
+        <SwitchPreference
+            android:key="pc_mode_low_resolution"
+            android:defaultValue="false"
+            android:title="@string/pc_mode_low_res_title"
+            android:summaryOn="@string/pc_mode_low_res_summaryOn"
+            android:summaryOff="@string/pc_mode_low_res_summaryOff" />
+
+        <com.libremobileos.desktopmode.preferences.ResolutionPreference
+            android:key="pc_mode_resolution"
+            android:enabled="false"
+            settings:widthValue="1280"
+            settings:heightValue="720" />
+    </PreferenceCategory>
+
+    <com.libremobileos.desktopmode.preferences.SeekBarPreference
+        android:key="pc_mode_scaling"
+        android:title="@string/pc_mode_scaling_title"
+        android:max="300"
+        android:min="25"
+        android:defaultValue="100"
+        settings:interval="25"
+        settings:units="%" />
+
+    <Preference
+        android:key="pc_mode_service_button"
+        android:defaultValue="false"
+        android:title="@string/pc_mode_service_start" />
 
 </PreferenceScreen>

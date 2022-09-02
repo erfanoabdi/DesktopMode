@@ -10,10 +10,12 @@ android {
             'main/res',
             'CollapsingToolbarBaseActivity/res',
             'IllustrationPreference/res',
+            'TopIntroPreference/res',
         ]
         java.srcDirs = [
             'CollapsingToolbarBaseActivity/src',
             'IllustrationPreference/src',
+            'TopIntroPreference/src',
         ]
     }
 }

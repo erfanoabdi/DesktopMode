@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base attributes available to SeekBarPreference. -->
+    <declare-styleable name="SeekBarPreference">
+        <attr name="interval" format="integer" />
+        <attr name="units" format="string|reference" />
+        <attr name="allowEditText" format="boolean" />
+    </declare-styleable>
+
+    <!-- Base attributes available to SeekBarPreference. -->
+    <declare-styleable name="ResolutionPreference">
+        <attr name="widthValue" format="integer" />
+        <attr name="heightValue" format="integer" />
+    </declare-styleable>
+
+</resources>
