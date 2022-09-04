@@ -33,5 +33,6 @@ android_app {
         "androidx.appcompat_appcompat",
         "androidx.preference_preference",
         "com.google.android.material_material",
+        "VncFlinger_aidl-java",
     ],
 }
