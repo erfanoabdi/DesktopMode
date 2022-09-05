@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import static com.libremobileos.desktopmode.PCModeConfigFragment.*;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -11,15 +12,24 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 
 import org.eu.droid_ng.vncflinger.IVncFlinger;
 
-public class VNCServiceController {
+public class VNCServiceController extends BroadcastReceiver {
 
     private Context mContext;
     private IVncFlinger mService;
     private VNCServiceConnection mServiceConnection;
     private VNCServiceListener mListener;
+
+    public VNCServiceController() {}
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if(intent.getAction().equals("com.libremobileos.desktopmode.START"))
+            start(context);
+    }
 
     public interface VNCServiceListener {
         public void onServiceEvent(Boolean connected);

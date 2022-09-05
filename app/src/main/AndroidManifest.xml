@@ -38,6 +38,9 @@
             android:exported="true"
             android:label="@string/tv_mode_config_title">
         </activity>
+        <receiver
+            android:name=".VNCServiceController"
+            android:exported="true" />
     </application>
 
 </manifest>
