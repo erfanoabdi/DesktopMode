@@ -12,6 +12,8 @@
     <string name="width">Width</string>
     <string name="height">Height</string>
 
+    <string name="advanced_options">Advanced Options</string>
+
     <string name="pc_mode_config_title">Desktop Mode on PC</string>
     <string name="pc_mode_config_summery">Configurations for android desktop mode on PC</string>
     <string name="tv_mode_config_title">Desktop Mode on TV</string>

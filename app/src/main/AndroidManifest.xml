@@ -34,6 +34,11 @@
             android:label="@string/pc_mode_config_title">
         </activity>
         <activity
+            android:name=".PCModeAdvancedConfigActivity"
+            android:exported="true"
+            android:label="@string/pc_mode_config_title">
+        </activity>
+        <activity
             android:name=".TVModeConfigActivity"
             android:exported="true"
             android:label="@string/tv_mode_config_title">
