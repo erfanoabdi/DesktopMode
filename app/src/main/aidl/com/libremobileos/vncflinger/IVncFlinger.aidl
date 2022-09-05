@@ -1,4 +1,4 @@
-package org.eu.droid_ng.vncflinger;
+package com.libremobileos.vncflinger;
 
 interface IVncFlinger {
 

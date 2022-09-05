@@ -14,7 +14,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import org.eu.droid_ng.vncflinger.IVncFlinger;
+import com.libremobileos.vncflinger.IVncFlinger;
 
 public class VNCServiceController extends BroadcastReceiver {
 
@@ -40,7 +40,7 @@ public class VNCServiceController extends BroadcastReceiver {
         mListener = listener;
         mServiceConnection = new VNCServiceConnection();
         Intent intent = new Intent();
-        intent.setClassName("org.eu.droid_ng.vncflinger", "org.eu.droid_ng.vncflinger.VncFlinger");
+        intent.setClassName("com.libremobileos.vncflinger", "com.libremobileos.vncflinger.VncFlinger");
         context.bindService(intent, mServiceConnection, Context.BIND_FOREGROUND_SERVICE);
     }
 
@@ -53,7 +53,7 @@ public class VNCServiceController extends BroadcastReceiver {
         public void onServiceDisconnected(ComponentName name) {
             mService = null;
             Intent intent = new Intent();
-            intent.setClassName("org.eu.droid_ng.vncflinger", "org.eu.droid_ng.vncflinger.VncFlinger");
+            intent.setClassName("com.libremobileos.vncflinger", "com.libremobileos.vncflinger.VncFlinger");
             mContext.bindService(intent, this, Context.BIND_FOREGROUND_SERVICE);
             mListener.onServiceEvent(false);
         }
@@ -61,7 +61,7 @@ public class VNCServiceController extends BroadcastReceiver {
 
     public static void start(Context context) {
         Intent intent = new Intent();
-        intent.setClassName("org.eu.droid_ng.vncflinger", "org.eu.droid_ng.vncflinger.VncFlinger");
+        intent.setClassName("com.libremobileos.vncflinger", "com.libremobileos.vncflinger.VncFlinger");
         SharedPreferences sharedPreferences = context.getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
 
         Boolean autoResize = sharedPreferences.getBoolean(KEY_PC_MODE_AUTO_RES, true);
@@ -85,7 +85,7 @@ public class VNCServiceController extends BroadcastReceiver {
 
     public static void stop(Context context) {
         Intent intent = new Intent();
-        intent.setClassName("org.eu.droid_ng.vncflinger", "org.eu.droid_ng.vncflinger.VncFlinger");
+        intent.setClassName("com.libremobileos.vncflinger", "com.libremobileos.vncflinger.VncFlinger");
 
         context.stopService(intent);
     }
