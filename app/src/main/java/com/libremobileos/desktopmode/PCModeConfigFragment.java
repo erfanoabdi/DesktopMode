@@ -77,6 +77,12 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
     }
 
     @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mVncService.unBind();
+    }
+
+    @Override
     public boolean onPreferenceClick(Preference pref) {
         final Context context = getActivity();
         if (context == null) {

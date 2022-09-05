@@ -44,6 +44,10 @@ public class VNCServiceController extends BroadcastReceiver {
         context.bindService(intent, mServiceConnection, Context.BIND_FOREGROUND_SERVICE);
     }
 
+    public void unBind() {
+        mContext.unbindService(mServiceConnection);
+    }
+
     class VNCServiceConnection implements ServiceConnection {
         public void onServiceConnected(ComponentName name, IBinder binder) {
             mService = IVncFlinger.Stub.asInterface(binder);
