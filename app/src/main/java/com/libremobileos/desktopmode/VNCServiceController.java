@@ -65,7 +65,6 @@ public class VNCServiceController extends BroadcastReceiver {
         SharedPreferences sharedPreferences = context.getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
 
         Boolean autoResize = sharedPreferences.getBoolean(KEY_PC_MODE_AUTO_RES, true);
-        Boolean lowRes = sharedPreferences.getBoolean(KEY_PC_MODE_LOW_RES, false);
         Integer width = sharedPreferences.getInt(KEY_PC_MODE_RES_WIDTH, 1280);
         Integer height = sharedPreferences.getInt(KEY_PC_MODE_RES_HEIGHT, 720);
         Integer scale = sharedPreferences.getInt(KEY_PC_MODE_SCALING, 100);
@@ -77,7 +76,6 @@ public class VNCServiceController extends BroadcastReceiver {
         }
         intent.putExtra("dpi", dpi);
         intent.putExtra("allowResize", autoResize);
-        intent.putExtra("lowResolution", lowRes);
         intent.putExtra("intentEnable", true);
         intent.putExtra("intentPkg", "com.libremobileos.desktopmode");
         intent.putExtra("intentComponent", "com.libremobileos.desktopmode.PCModeConfigActivity");

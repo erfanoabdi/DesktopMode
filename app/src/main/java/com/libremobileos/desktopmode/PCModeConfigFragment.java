@@ -19,7 +19,6 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
         Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
 
     public static final String KEY_PC_MODE_AUTO_RES = "pc_mode_auto_resolution";
-    public static final String KEY_PC_MODE_LOW_RES = "pc_mode_low_resolution";
     public static final String KEY_PC_MODE_RES = "pc_mode_resolution";
     public static final String KEY_PC_MODE_SCALING = "pc_mode_scaling";
     public static final String KEY_PC_MODE_SERVICE_BUTTON = "pc_mode_service_button";
@@ -29,13 +28,11 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
 
     protected SharedPreferences mSharedPreferences;
     protected Boolean mAutoResValue;
-    protected Boolean mLowResValue;
     protected Integer mCustomResWidthValue;
     protected Integer mCustomResHeightValue;
     protected Integer mScalingValue;
 
     protected SwitchPreference pcModeAutoRes;
-    protected SwitchPreference pcModeLowRes;
     protected ResolutionPreference pcModeRes;
     protected SeekBarPreference pcModeScaling;
     protected Preference pcModeServiceButton;
@@ -48,26 +45,21 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
 
         mSharedPreferences = getActivity().getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
         mAutoResValue = mSharedPreferences.getBoolean(KEY_PC_MODE_AUTO_RES, true);
-        mLowResValue = mSharedPreferences.getBoolean(KEY_PC_MODE_LOW_RES, false);
         mCustomResWidthValue = mSharedPreferences.getInt(KEY_PC_MODE_RES_WIDTH, 1280);
         mCustomResHeightValue = mSharedPreferences.getInt(KEY_PC_MODE_RES_HEIGHT, 720);
         mScalingValue = mSharedPreferences.getInt(KEY_PC_MODE_SCALING, 100);
 
         pcModeAutoRes = findPreference(KEY_PC_MODE_AUTO_RES);
-        pcModeLowRes = findPreference(KEY_PC_MODE_LOW_RES);
         pcModeRes = findPreference(KEY_PC_MODE_RES);
         pcModeScaling = findPreference(KEY_PC_MODE_SCALING);
         pcModeServiceButton = findPreference(KEY_PC_MODE_SERVICE_BUTTON);
 
         pcModeAutoRes.setOnPreferenceChangeListener(this);
-        pcModeLowRes.setOnPreferenceChangeListener(this);
         pcModeRes.setOnPreferenceChangeListener(this);
         pcModeScaling.setOnPreferenceChangeListener(this);
         pcModeServiceButton.setOnPreferenceClickListener(this);
 
         pcModeAutoRes.setChecked(mAutoResValue);
-        pcModeLowRes.setChecked(mLowResValue);
-        pcModeLowRes.setEnabled(mAutoResValue);
         pcModeRes.setWidth(mCustomResWidthValue, false);
         pcModeRes.setHeight(mCustomResHeightValue, false);
         pcModeRes.setEnabled(!mAutoResValue);
@@ -130,20 +122,9 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
             case KEY_PC_MODE_AUTO_RES:
                 Boolean isAutoChecked = (Boolean) newValue;
                 if (isAutoChecked != mAutoResValue) {
-                    if (!isAutoChecked) {
-                        pcModeLowRes.setChecked(false);
-                    }
-                    pcModeLowRes.setEnabled(isAutoChecked);
                     pcModeRes.setEnabled(!isAutoChecked);
                     mAutoResValue = isAutoChecked;
                     handleChange(true);
-                }
-                return true;
-            case KEY_PC_MODE_LOW_RES:
-                Boolean isLowChecked = (Boolean) newValue;
-                if (isLowChecked != mLowResValue) {
-                    mLowResValue = isLowChecked;
-                    handleChange(false);
                 }
                 return true;
             case KEY_PC_MODE_RES:
@@ -183,7 +164,6 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
         SharedPreferences.Editor myEdit = mSharedPreferences.edit();
 
         myEdit.putBoolean(KEY_PC_MODE_AUTO_RES, mAutoResValue);
-        myEdit.putBoolean(KEY_PC_MODE_LOW_RES, mLowResValue);
         myEdit.putInt(KEY_PC_MODE_RES_WIDTH, mCustomResWidthValue);
         myEdit.putInt(KEY_PC_MODE_RES_HEIGHT, mCustomResHeightValue);
         myEdit.putInt(KEY_PC_MODE_SCALING, mScalingValue);

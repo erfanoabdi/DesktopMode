@@ -14,13 +14,6 @@
             android:summaryOn="@string/pc_mode_auto_res_summaryOn"
             android:summaryOff="@string/pc_mode_auto_res_summaryOff" />
 
-        <SwitchPreference
-            android:key="pc_mode_low_resolution"
-            android:defaultValue="false"
-            android:title="@string/pc_mode_low_res_title"
-            android:summaryOn="@string/pc_mode_low_res_summaryOn"
-            android:summaryOff="@string/pc_mode_low_res_summaryOff" />
-
         <com.libremobileos.desktopmode.preferences.ResolutionPreference
             android:key="pc_mode_resolution"
             android:enabled="false"
