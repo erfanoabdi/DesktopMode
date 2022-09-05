@@ -38,4 +38,16 @@
     <string name="pc_mode_service_apply">Apply Changes Now</string>
     <string name="pc_mode_service_restart_apply">Apply and Restart Now</string>
 
+    <string name="pc_mode_advanced_intro">Experimental Options for PC Desktop Mode, Make sure to restart service after editing below configs</string>
+    <string name="pc_mode_emulate_touch_title">Emulate Touch for input</string>
+    <string name="pc_mode_emulate_touch_summery">Sends fake touchscreen events instead of pointer</string>
+    <string name="pc_mode_relative_input_title">Use Relative Input</string>
+    <string name="pc_mode_relative_input_summery">Sends relative pointer events instead of absolute position</string>
+    <string name="pc_mode_mirror_internal_title">Mirror Internal Display</string>
+    <string name="pc_mode_mirror_internal_summery">Project Internal Display instead of desktop UI</string>
+    <string name="pc_mode_audio_title">Enable Audio</string>
+    <string name="pc_mode_audio_summery">Stream Audio to the client</string>
+    <string name="pc_mode_remote_cursor_title">Asynchronous Cursor</string>
+    <string name="pc_mode_remote_cursor_summery">Render Cursor icon on client</string>
+
 </resources>

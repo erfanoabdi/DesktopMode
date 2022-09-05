@@ -2,6 +2,7 @@ package com.libremobileos.desktopmode;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import static com.libremobileos.desktopmode.PCModeAdvancedConfigFragment.*;
 import static com.libremobileos.desktopmode.PCModeConfigFragment.*;
 
 import android.content.BroadcastReceiver;
@@ -68,10 +69,18 @@ public class VNCServiceController extends BroadcastReceiver {
         intent.setClassName("com.libremobileos.vncflinger", "com.libremobileos.vncflinger.VncFlinger");
         SharedPreferences sharedPreferences = context.getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
 
+        // General
         Boolean autoResize = sharedPreferences.getBoolean(KEY_PC_MODE_AUTO_RES, true);
         Integer width = sharedPreferences.getInt(KEY_PC_MODE_RES_WIDTH, 1280);
         Integer height = sharedPreferences.getInt(KEY_PC_MODE_RES_HEIGHT, 720);
         Integer scale = sharedPreferences.getInt(KEY_PC_MODE_SCALING, 100);
+
+        // Advanced
+        Boolean emulateTouchValue = sharedPreferences.getBoolean(KEY_PC_MODE_EMULATE_TOUCH, false);
+        Boolean relativeInputValue = sharedPreferences.getBoolean(KEY_PC_MODE_RELATIVE_INPUT, false);
+        Boolean mirrorInternalValue = sharedPreferences.getBoolean(KEY_PC_MODE_MIRROR_INTERNAL, false);
+        Boolean audioValue = sharedPreferences.getBoolean(KEY_PC_MODE_AUDIO, true);
+        Boolean remoteCursorValue = sharedPreferences.getBoolean(KEY_PC_MODE_REMOTE_CURSOR, true);
 
         int dpi = 160 * scale / 100;
         if (!autoResize) {
@@ -80,6 +89,13 @@ public class VNCServiceController extends BroadcastReceiver {
         }
         intent.putExtra("dpi", dpi);
         intent.putExtra("allowResize", autoResize);
+
+        intent.putExtra("emulateTouch", emulateTouchValue);
+        intent.putExtra("useRelativeInput", relativeInputValue);
+        intent.putExtra("mirrorInternal", mirrorInternalValue);
+        intent.putExtra("hasAudio", audioValue);
+        intent.putExtra("remoteCursor", remoteCursorValue);
+
         intent.putExtra("intentEnable", true);
         intent.putExtra("intentPkg", "com.libremobileos.desktopmode");
         intent.putExtra("intentComponent", "com.libremobileos.desktopmode.PCModeConfigActivity");

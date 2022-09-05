@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="pc_mode_intro"
+        android:title="@string/pc_mode_advanced_intro" />
+
+    <SwitchPreference
+        android:key="pc_mode_emulate_touch"
+        android:defaultValue="false"
+        android:title="@string/pc_mode_emulate_touch_title"
+        android:summary="@string/pc_mode_emulate_touch_summery" />
+
+    <SwitchPreference
+        android:key="pc_mode_relative_input"
+        android:defaultValue="false"
+        android:title="@string/pc_mode_relative_input_title"
+        android:summary="@string/pc_mode_relative_input_summery" />
+
+    <SwitchPreference
+        android:key="pc_mode_mirror_internal"
+        android:defaultValue="false"
+        android:title="@string/pc_mode_mirror_internal_title"
+        android:summary="@string/pc_mode_mirror_internal_summery" />
+
+    <SwitchPreference
+        android:key="pc_mode_audio"
+        android:defaultValue="true"
+        android:title="@string/pc_mode_audio_title"
+        android:summary="@string/pc_mode_audio_summery" />
+
+    <SwitchPreference
+        android:key="pc_mode_remote_cursor"
+        android:defaultValue="true"
+        android:title="@string/pc_mode_remote_cursor_title"
+        android:summary="@string/pc_mode_remote_cursor_summery" />
 
 </PreferenceScreen>
