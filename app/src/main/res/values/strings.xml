@@ -49,5 +49,7 @@
     <string name="pc_mode_audio_summery">Stream Audio to the client</string>
     <string name="pc_mode_remote_cursor_title">Asynchronous Cursor</string>
     <string name="pc_mode_remote_cursor_summery">Render Cursor icon on client</string>
+    <string name="pc_mode_clipboard_title">Clipboard sync</string>
+    <string name="pc_mode_clipboard_summery">Synchronize clipboard values bi-directional</string>
 
 </resources>

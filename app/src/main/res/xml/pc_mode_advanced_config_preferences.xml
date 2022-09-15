@@ -35,4 +35,10 @@
         android:title="@string/pc_mode_remote_cursor_title"
         android:summary="@string/pc_mode_remote_cursor_summery" />
 
+    <SwitchPreference
+        android:key="pc_mode_clipboard"
+        android:defaultValue="true"
+        android:title="@string/pc_mode_clipboard_title"
+        android:summary="@string/pc_mode_clipboard_summery" />
+
 </PreferenceScreen>

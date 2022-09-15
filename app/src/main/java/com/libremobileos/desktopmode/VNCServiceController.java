@@ -83,6 +83,7 @@ public class VNCServiceController extends BroadcastReceiver {
         Boolean mirrorInternalValue = sharedPreferences.getBoolean(KEY_PC_MODE_MIRROR_INTERNAL, false);
         Boolean audioValue = sharedPreferences.getBoolean(KEY_PC_MODE_AUDIO, true);
         Boolean remoteCursorValue = sharedPreferences.getBoolean(KEY_PC_MODE_REMOTE_CURSOR, true);
+        Boolean clipboard = sharedPreferences.getBoolean(KEY_PC_MODE_CLIPBOARD, true);
 
         int dpi = 160 * scale / 100;
         if (!autoResize) {
@@ -97,6 +98,7 @@ public class VNCServiceController extends BroadcastReceiver {
         intent.putExtra("mirrorInternal", mirrorInternalValue);
         intent.putExtra("hasAudio", audioValue);
         intent.putExtra("remoteCursor", remoteCursorValue);
+        intent.putExtra("clipboard", clipboard);
 
         intent.putExtra("intentEnable", true);
         intent.putExtra("intentPkg", "com.libremobileos.desktopmode");
