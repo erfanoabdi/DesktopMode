@@ -19,6 +19,8 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
 
         final Preference pcModeSetting = findPreference(KEY_PC_MODE_CONFIG);
         final Preference tvModeSetting = findPreference(KEY_TV_MODE_CONFIG);
+        assert pcModeSetting != null;
+        assert tvModeSetting != null;
         pcModeSetting.setOnPreferenceClickListener(this);
         tvModeSetting.setOnPreferenceClickListener(this);
     }

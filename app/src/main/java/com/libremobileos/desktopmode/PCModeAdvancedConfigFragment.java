@@ -2,7 +2,6 @@ package com.libremobileos.desktopmode;
 
 import static android.content.Context.MODE_PRIVATE;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -36,7 +35,7 @@ public class PCModeAdvancedConfigFragment extends PreferenceFragmentCompat
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.pc_mode_advanced_config_preferences, rootKey);
 
-        mSharedPreferences = getActivity().getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
+        mSharedPreferences = requireActivity().getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
         mEmulateTouchValue = mSharedPreferences.getBoolean(KEY_PC_MODE_EMULATE_TOUCH, false);
         mRelativeInputValue = mSharedPreferences.getBoolean(KEY_PC_MODE_RELATIVE_INPUT, false);
         mMirrorInternalValue = mSharedPreferences.getBoolean(KEY_PC_MODE_MIRROR_INTERNAL, false);
@@ -104,6 +103,6 @@ public class PCModeAdvancedConfigFragment extends PreferenceFragmentCompat
         myEdit.putBoolean(KEY_PC_MODE_AUDIO, mAudioValue);
         myEdit.putBoolean(KEY_PC_MODE_REMOTE_CURSOR, mRemoteCursorValue);
 
-        myEdit.commit();
+        myEdit.apply();
     }
 }

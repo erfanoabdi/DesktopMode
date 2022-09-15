@@ -3,10 +3,8 @@ package com.libremobileos.desktopmode;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
@@ -14,6 +12,8 @@ import androidx.preference.SwitchPreference;
 
 import com.libremobileos.desktopmode.preferences.ResolutionPreference;
 import com.libremobileos.desktopmode.preferences.SeekBarPreference;
+
+import java.util.Objects;
 
 public class PCModeConfigFragment extends PreferenceFragmentCompat implements
         Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
@@ -43,7 +43,7 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.pc_mode_config_preferences, rootKey);
 
-        mSharedPreferences = getActivity().getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
+        mSharedPreferences = requireActivity().getSharedPreferences("PCModeConfigs", MODE_PRIVATE);
         mAutoResValue = mSharedPreferences.getBoolean(KEY_PC_MODE_AUTO_RES, true);
         mCustomResWidthValue = mSharedPreferences.getInt(KEY_PC_MODE_RES_WIDTH, 1280);
         mCustomResHeightValue = mSharedPreferences.getInt(KEY_PC_MODE_RES_HEIGHT, 720);
@@ -65,14 +65,11 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
         pcModeRes.setEnabled(!mAutoResValue);
         pcModeScaling.setValue(mScalingValue);
 
-        mVncService = new VNCServiceController(getActivity(), new VNCServiceController.VNCServiceListener() {
-            @Override
-            public void onServiceEvent(Boolean connected) {
-                if (connected)
-                    pcModeServiceButton.setTitle(R.string.pc_mode_service_stop);
-                else
-                    pcModeServiceButton.setTitle(R.string.pc_mode_service_start);
-            }
+        mVncService = new VNCServiceController(requireActivity(), connected -> {
+            if (connected)
+                pcModeServiceButton.setTitle(R.string.pc_mode_service_stop);
+            else
+                pcModeServiceButton.setTitle(R.string.pc_mode_service_start);
         });
     }
 
@@ -91,22 +88,22 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
 
         if (pref.getKey().equals(KEY_PC_MODE_SERVICE_BUTTON)) {
             CharSequence title = pref.getTitle();
-            if (getString(R.string.pc_mode_service_stop).equals(title)) {
+            if (getString(R.string.pc_mode_service_stop).contentEquals(title)) {
                 VNCServiceController.stop(getActivity());
                 return true;
-            } else if (getString(R.string.pc_mode_service_start).equals(title)) {
+            } else if (getString(R.string.pc_mode_service_start).contentEquals(title)) {
                 VNCServiceController.start(getActivity());
                 return true;
-            } else if (getString(R.string.pc_mode_service_restart_apply).equals(title)) {
+            } else if (getString(R.string.pc_mode_service_restart_apply).contentEquals(title)) {
                 VNCServiceController.stop(getActivity());
                 applyChanges();
                 VNCServiceController.start(getActivity());
                 return true;
-            } else if (getString(R.string.pc_mode_service_restart).equals(title)) {
+            } else if (getString(R.string.pc_mode_service_restart).contentEquals(title)) {
                 VNCServiceController.stop(getActivity());
                 VNCServiceController.start(getActivity());
                 return true;
-            } else if (getString(R.string.pc_mode_service_apply).equals(title)) {
+            } else if (getString(R.string.pc_mode_service_apply).contentEquals(title)) {
                 applyChanges();
                 VNCServiceController.start(getActivity());
                 pcModeServiceButton.setTitle(R.string.pc_mode_service_stop);
@@ -145,7 +142,7 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
                 return true;
             case KEY_PC_MODE_SCALING:
                 Integer progress = (Integer) newValue;
-                if (progress != mScalingValue) {
+                if (!Objects.equals(progress, mScalingValue)) {
                     mScalingValue = progress;
                     handleChange(false);
                 }
@@ -174,6 +171,6 @@ public class PCModeConfigFragment extends PreferenceFragmentCompat implements
         myEdit.putInt(KEY_PC_MODE_RES_HEIGHT, mCustomResHeightValue);
         myEdit.putInt(KEY_PC_MODE_SCALING, mScalingValue);
 
-        myEdit.commit();
+        myEdit.apply();
     }
 }

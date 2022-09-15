@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.libremobileos.desktopmode.PCModeAdvancedConfigFragment.*;
 import static com.libremobileos.desktopmode.PCModeConfigFragment.*;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -13,10 +14,10 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.util.Log;
 
 import com.libremobileos.vncflinger.IVncFlinger;
 
+@SuppressLint("WrongConstant")
 public class VNCServiceController extends BroadcastReceiver {
 
     private Context mContext;
@@ -24,6 +25,7 @@ public class VNCServiceController extends BroadcastReceiver {
     private VNCServiceConnection mServiceConnection;
     private VNCServiceListener mListener;
 
+    @SuppressWarnings("unused")
     public VNCServiceController() {}
 
     @Override
@@ -33,7 +35,7 @@ public class VNCServiceController extends BroadcastReceiver {
     }
 
     public interface VNCServiceListener {
-        public void onServiceEvent(Boolean connected);
+        void onServiceEvent(Boolean connected);
     }
 
     public VNCServiceController(Context context, VNCServiceListener listener) {
@@ -42,7 +44,7 @@ public class VNCServiceController extends BroadcastReceiver {
         mServiceConnection = new VNCServiceConnection();
         Intent intent = new Intent();
         intent.setClassName("com.libremobileos.vncflinger", "com.libremobileos.vncflinger.VncFlinger");
-        context.bindService(intent, mServiceConnection, Context.BIND_FOREGROUND_SERVICE);
+        context.bindService(intent, mServiceConnection, 0x04000000 /*Context.BIND_FOREGROUND_SERVICE*/);
     }
 
     public void unBind() {
@@ -59,7 +61,7 @@ public class VNCServiceController extends BroadcastReceiver {
             mService = null;
             Intent intent = new Intent();
             intent.setClassName("com.libremobileos.vncflinger", "com.libremobileos.vncflinger.VncFlinger");
-            mContext.bindService(intent, this, Context.BIND_FOREGROUND_SERVICE);
+            mContext.bindService(intent, this, 0x04000000 /*Context.BIND_FOREGROUND_SERVICE*/);
             mListener.onServiceEvent(false);
         }
     }
@@ -73,7 +75,7 @@ public class VNCServiceController extends BroadcastReceiver {
         Boolean autoResize = sharedPreferences.getBoolean(KEY_PC_MODE_AUTO_RES, true);
         Integer width = sharedPreferences.getInt(KEY_PC_MODE_RES_WIDTH, 1280);
         Integer height = sharedPreferences.getInt(KEY_PC_MODE_RES_HEIGHT, 720);
-        Integer scale = sharedPreferences.getInt(KEY_PC_MODE_SCALING, 100);
+        int scale = sharedPreferences.getInt(KEY_PC_MODE_SCALING, 100);
 
         // Advanced
         Boolean emulateTouchValue = sharedPreferences.getBoolean(KEY_PC_MODE_EMULATE_TOUCH, false);
