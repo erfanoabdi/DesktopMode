@@ -15,14 +15,14 @@
     <string name="advanced_options">Advanced Options</string>
 
     <string name="pc_mode_config_title">Desktop Mode on PC</string>
-    <string name="pc_mode_config_summery">Configurations for android desktop mode on PC</string>
+    <string name="pc_mode_config_summary">Configurations for android desktop mode on PC</string>
     <string name="tv_mode_config_title">Desktop Mode on TV</string>
-    <string name="tv_mode_config_summery">Configurations for android desktop mode on HDMI connected TV or any external display</string>
+    <string name="tv_mode_config_summary">Configurations for android desktop mode on HDMI connected TV or any external display</string>
 
     <string name="tv_mode_intro">Get a powerful desktop experience from your phone.\nConnect your device wirelessly or with a HDMI cable to a compatible TV or Monitor.</string>
     <string name="tv_mode_enable_switch">Enable Desktop mode on External Display</string>
     <string name="tv_mode_touchpad_title">Touchpad on Screen</string>
-    <string name="tv_mode_touchpad_summery">Show touchpad and keyboard on device screen</string>
+    <string name="tv_mode_touchpad_summary">Show touchpad and keyboard on device screen</string>
 
     <string name="pc_mode_intro">Get a powerful desktop experience from your phone.\nConnect your device with a cable to a compatible PC.\nPC client: <a href="https://get.libremobileos.com/desktop">get.libremobileos.com/desktop</a> .</string>
     <string name="pc_mode_auto_res_title">Auto Resolution</string>
@@ -40,16 +40,16 @@
 
     <string name="pc_mode_advanced_intro">Experimental Options for PC Desktop Mode, Make sure to restart service after editing below configs</string>
     <string name="pc_mode_emulate_touch_title">Emulate Touch for input</string>
-    <string name="pc_mode_emulate_touch_summery">Sends fake touchscreen events instead of pointer</string>
+    <string name="pc_mode_emulate_touch_summary">Sends fake touchscreen events instead of pointer</string>
     <string name="pc_mode_relative_input_title">Use Relative Input</string>
-    <string name="pc_mode_relative_input_summery">Sends relative pointer events instead of absolute position</string>
+    <string name="pc_mode_relative_input_summary">Sends relative pointer events instead of absolute position</string>
     <string name="pc_mode_mirror_internal_title">Mirror Internal Display</string>
-    <string name="pc_mode_mirror_internal_summery">Project Internal Display instead of desktop UI</string>
+    <string name="pc_mode_mirror_internal_summary">Project Internal Display instead of desktop UI</string>
     <string name="pc_mode_audio_title">Enable Audio</string>
-    <string name="pc_mode_audio_summery">Stream Audio to the client</string>
+    <string name="pc_mode_audio_summary">Stream Audio to the client</string>
     <string name="pc_mode_remote_cursor_title">Asynchronous Cursor</string>
-    <string name="pc_mode_remote_cursor_summery">Render Cursor icon on client</string>
+    <string name="pc_mode_remote_cursor_summary">Render Cursor icon on client</string>
     <string name="pc_mode_clipboard_title">Clipboard sync</string>
-    <string name="pc_mode_clipboard_summery">Synchronize clipboard values bi-directional</string>
+    <string name="pc_mode_clipboard_summary">Synchronize clipboard values bi-directional</string>
 
 </resources>

@@ -9,36 +9,36 @@
         android:key="pc_mode_emulate_touch"
         android:defaultValue="false"
         android:title="@string/pc_mode_emulate_touch_title"
-        android:summary="@string/pc_mode_emulate_touch_summery" />
+        android:summary="@string/pc_mode_emulate_touch_summary" />
 
     <SwitchPreference
         android:key="pc_mode_relative_input"
         android:defaultValue="false"
         android:title="@string/pc_mode_relative_input_title"
-        android:summary="@string/pc_mode_relative_input_summery" />
+        android:summary="@string/pc_mode_relative_input_summary" />
 
     <SwitchPreference
         android:key="pc_mode_mirror_internal"
         android:defaultValue="false"
         android:title="@string/pc_mode_mirror_internal_title"
-        android:summary="@string/pc_mode_mirror_internal_summery" />
+        android:summary="@string/pc_mode_mirror_internal_summary" />
 
     <SwitchPreference
         android:key="pc_mode_audio"
         android:defaultValue="true"
         android:title="@string/pc_mode_audio_title"
-        android:summary="@string/pc_mode_audio_summery" />
+        android:summary="@string/pc_mode_audio_summary" />
 
     <SwitchPreference
         android:key="pc_mode_remote_cursor"
         android:defaultValue="true"
         android:title="@string/pc_mode_remote_cursor_title"
-        android:summary="@string/pc_mode_remote_cursor_summery" />
+        android:summary="@string/pc_mode_remote_cursor_summary" />
 
     <SwitchPreference
         android:key="pc_mode_clipboard"
         android:defaultValue="true"
         android:title="@string/pc_mode_clipboard_title"
-        android:summary="@string/pc_mode_clipboard_summery" />
+        android:summary="@string/pc_mode_clipboard_summary" />
 
 </PreferenceScreen>
